@@ -1,5 +1,6 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 import dotenv from 'dotenv';
 import passport from './config/passport.config.js';
 import { connectDB } from './config/database.config.js';
@@ -18,6 +19,10 @@ const PORT = process.env.PORT || 8080;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(cors({
+  origin: ['https://alinanailsstudio.netlify.app', 'http://localhost:3000'],
+  credentials: true
+}));
 app.use(passport.initialize());
 
 // Rutas
