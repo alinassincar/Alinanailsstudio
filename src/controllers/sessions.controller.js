@@ -69,7 +69,6 @@ export const login = async (req, res) => {
             httpOnly: true,
             sameSite: 'none',
             secure: true
-});
         });
 
         res.json({ status: 'success', message: 'Login exitoso', token });
