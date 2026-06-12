@@ -35,7 +35,7 @@ export const register = async (req, res) => {
             age,
             password: createHash(password),
             cart: newCart._id,
-            role: email === 'adminCoder@coder.com' ? 'admin' : 'user'
+            role: email === 'candelaaltamirano25@gmail.com' ? 'admin' : 'user'
         });
 
         res.status(201).json({
