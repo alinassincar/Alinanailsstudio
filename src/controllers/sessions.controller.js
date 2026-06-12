@@ -66,7 +66,10 @@ export const login = async (req, res) => {
 
         res.cookie('coderCookie', token, {
             maxAge: 24 * 60 * 60 * 1000,
-            httpOnly: true
+            httpOnly: true,
+            sameSite: 'none',
+            secure: true
+});
         });
 
         res.json({ status: 'success', message: 'Login exitoso', token });
